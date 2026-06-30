@@ -10,7 +10,7 @@ services:
     environment:
       - APP_ENV=production
       - APP_DEBUG=false
-      - APP_KEY=base64:8J9ycCCFqV4VqBjSHqHsFtGbPKhfm41NqvnWf3kced8=
+      - APP_KEY=${APP_KEY}
       - DB_CONNECTION=sqlite
       - APP_URL=http://localhost:8080
       - MAIL_MAILER=smtp
