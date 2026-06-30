@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMessageMail;
 use App\Models\ContactMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PortfolioController extends Controller
 {
@@ -20,7 +22,9 @@ class PortfolioController extends Controller
             'message' => 'required|string|max:5000',
         ]);
 
-        ContactMessage::create($data);
+        $contactMessage = ContactMessage::create($data);
+
+        Mail::to('engelbertrodriguez21@gmail.com')->send(new ContactMessageMail($contactMessage));
 
         return back()->with('success', 'Mensaje enviado correctamente. Gracias por contactarme.');
     }
