@@ -1,12 +1,12 @@
 # Nuevo mensaje de contacto
 
-**Nombre:** {{ $message->name }}
+**Nombre:** {{ $contactMessage->name }}
 
-**Email:** {{ $message->email }}
+**Email:** {{ $contactMessage->email }}
 
 **Mensaje:**
 
-{{ $message->message }}
+{{ $contactMessage->message }}
 
 ---
 

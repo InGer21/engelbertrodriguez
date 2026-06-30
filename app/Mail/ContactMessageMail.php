@@ -14,14 +14,14 @@ class ContactMessageMail extends Mailable
     use Queueable, SerializesModels;
 
     public function __construct(
-        public ContactMessage $message
+        public ContactMessage $contactMessage
     ) {}
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Nuevo mensaje de {$this->message->name}",
-            replyTo: [$this->message->email, $this->message->name],
+            subject: "Nuevo mensaje de {$this->contactMessage->name}",
+            replyTo: $this->contactMessage->email,
         );
     }
 
