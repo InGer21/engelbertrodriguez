@@ -1,0 +1,16 @@
+/vendor/
+/node_modules/
+/storage/framework/
+/storage/logs/
+/storage/debugbar/
+.env
+.env.*.encrypted
+.DS_Store
+Thumbs.db
+/public/hot
+/public/storage
+/build/
+/docker-compose.override.yml
+.phpunit.result.cache
+phpunit.xml
+.php-cs-fixer.cache
